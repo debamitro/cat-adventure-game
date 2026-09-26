@@ -1,0 +1,246 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/cat.gd" id="2_cat"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="3_hud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cat"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cat_feet"]
+size = Vector2(20, 4)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -5000.0
+offset_top = -500.0
+offset_right = 50000.0
+offset_bottom = 1000.0
+color = Color(0.53, 0.81, 0.92, 1)
+
+[node name="GroundFill" type="ColorRect" parent="."]
+offset_left = -5000.0
+offset_top = 440.0
+offset_right = 50000.0
+offset_bottom = 1000.0
+color = Color(0.15, 0.4, 0.75, 0.3)
+
+[node name="Cat" type="CharacterBody2D" parent="."]
+collision_layer = 1
+collision_mask = 2
+script = ExtResource("2_cat")
+
+[node name="Sprite" type="Node2D" parent="Cat"]
+position = Vector2(0, -16)
+
+[node name="Body" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(1, 0.6, 0.2, 1)
+
+[node name="Head" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = -8.0
+color = Color(1, 0.55, 0.15, 1)
+
+[node name="LeftEar" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -9.0
+offset_top = -26.0
+offset_right = -3.0
+offset_bottom = -18.0
+color = Color(1, 0.55, 0.15, 1)
+
+[node name="RightEar" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 3.0
+offset_top = -26.0
+offset_right = 9.0
+offset_bottom = -18.0
+color = Color(1, 0.55, 0.15, 1)
+
+[node name="LeftEarInner" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -8.0
+offset_top = -25.0
+offset_right = -4.0
+offset_bottom = -19.0
+color = Color(1, 0.75, 0.65, 1)
+
+[node name="RightEarInner" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 4.0
+offset_top = -25.0
+offset_right = 8.0
+offset_bottom = -19.0
+color = Color(1, 0.75, 0.65, 1)
+
+[node name="LeftEye" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -6.0
+offset_top = -18.0
+offset_right = -3.0
+offset_bottom = -14.0
+color = Color(0, 0, 0, 1)
+
+[node name="RightEye" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 3.0
+offset_top = -18.0
+offset_right = 6.0
+offset_bottom = -14.0
+color = Color(0, 0, 0, 1)
+
+[node name="LeftPupil" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -5.0
+offset_top = -17.0
+offset_right = -3.5
+offset_bottom = -15.0
+color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="RightPupil" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 3.5
+offset_top = -17.0
+offset_right = 5.0
+offset_bottom = -15.0
+color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="Nose" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -2.0
+offset_top = -14.0
+offset_right = 2.0
+offset_bottom = -12.0
+color = Color(1, 0.4, 0.4, 1)
+
+[node name="Mouth" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -2.0
+offset_top = -12.0
+offset_right = 2.0
+offset_bottom = -10.5
+color = Color(0.8, 0.3, 0.3, 1)
+
+[node name="Tail" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 9.0
+offset_top = -5.0
+offset_right = 16.0
+offset_bottom = -2.0
+color = Color(1, 0.55, 0.15, 1)
+
+[node name="TailTip" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 14.0
+offset_top = -8.0
+offset_right = 18.0
+offset_bottom = -4.0
+color = Color(1, 0.55, 0.15, 1)
+
+[node name="WhiskerLeft1" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -12.0
+offset_top = -13.0
+offset_right = -7.0
+offset_bottom = -12.5
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="WhiskerLeft2" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -7.0
+offset_bottom = -10.5
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="WhiskerRight1" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 12.0
+offset_bottom = -12.5
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="WhiskerRight2" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 7.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = -10.5
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="LeftLeg" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -8.0
+offset_top = 7.0
+offset_right = -4.0
+offset_bottom = 14.0
+color = Color(1, 0.55, 0.15, 1)
+
+[node name="RightLeg" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 8.0
+offset_bottom = 14.0
+color = Color(1, 0.55, 0.15, 1)
+
+[node name="LeftPaw" type="ColorRect" parent="Cat/Sprite"]
+offset_left = -9.0
+offset_top = 13.0
+offset_right = -3.0
+offset_bottom = 15.0
+color = Color(1, 0.65, 0.3, 1)
+
+[node name="RightPaw" type="ColorRect" parent="Cat/Sprite"]
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 9.0
+offset_bottom = 15.0
+color = Color(1, 0.65, 0.3, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_cat")
+
+[node name="FeetDetector" type="Area2D" parent="Cat"]
+collision_mask = 2
+
+[node name="FeetShape" type="CollisionShape2D" parent="Cat/FeetDetector"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_cat_feet")
+
+[node name="AnimationTimer" type="Timer" parent="Cat"]
+wait_time = 0.1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
+limit_smoothed = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 10
+script = ExtResource("3_hud")
+
+[node name="TitleLabel" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 400.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 28
+text = "🐱 Cat Bridge Adventure"
+
+[node name="BridgesLabel" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 20
+text = "Bridges crossed: 0 / 21"
+
+[node name="ControlsLabel" type="RichTextLabel" parent="HUD"]
+offset_left = 20.0
+offset_top = 580.0
+offset_right = 500.0
+offset_bottom = 630.0
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Controls: A/D or arrows to move | W/Up/Space to jump | R to reset"
+
+[node name="MessageLabel" type="Label" parent="HUD"]
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 950.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1

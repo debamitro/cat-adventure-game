@@ -1,0 +1,15 @@
+# Godot 4+ specific
+.import/
+*.import
+export_presets.cfg
+.mono/
+data_*/
+*.translation
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
